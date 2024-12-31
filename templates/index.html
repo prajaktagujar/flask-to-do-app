@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #28a745;
+        }
+
+        /* To-Do App Container */
+        .todo-container {
+            background: #ffffff;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Form Styles */
+        .task-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .task-form input, .task-form button {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .task-form button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .task-form button:hover {
+            background-color: #218838;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        td a {
+            color: #dc3545;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- To-Do App Container -->
+    <div class="todo-container">
+        <h1>To-Do App</h1>
+
+        <!-- Task Form -->
+        <form action="/" method ="POST"  class="mb-3">
+            <input type="text" placeholder="Enter task name" name="name" id="taskName" required>
+            <input type="text" placeholder="Enter task description"name="description" id="taskDesc" required>
+            <button type="submit">Add Task</button>
+            
+
+        </form>
+
+        <!-- Tasks Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Task_number</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for new_task in tasks %}
+                <tr>
+                    <td>{{ new_task.name }}</td>
+                    <td>{{ new_task.description }}</td>
+                    <td><a href="#">Delete</a></td>
+                </tr>
+
+                <td>
+                    <a href="/delete/{{ task.id }}">Delete</a>
+                </td>
+                
+                
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
