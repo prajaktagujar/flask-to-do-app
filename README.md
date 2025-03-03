@@ -21,12 +21,3 @@ You can continue to improve your app by adding features like:
 - **Styling**: Use Bootstrap or a CSS framework to make the UI more polished.
 - **APIs**: Turn your app into a full REST API using Flask-RESTful.
 
-### 6. **Share Your Project**  
-Share the link to your GitHub repository with others or showcase it in your portfolio.
-
-### 7. **Seek Feedback**  
-If you want to improve your code, seek feedback from other developers or online communities (such as GitHub Discussions or StackOverflow).
-
-Let me know if you'd like assistance with any of these steps!
-
-
